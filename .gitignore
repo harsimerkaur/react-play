@@ -1,0 +1,9 @@
+curofy-dist/
+.idea/
+.DS_Store
+stats.json
+node_modules/
+build/
+.idea/workspace.xml
+.vscode/
+.history/

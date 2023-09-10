@@ -4,7 +4,7 @@ function LookMa() {
   return (
     <main>
         <h1>
-            look ma
+           Home
         </h1>
     </main>
   )

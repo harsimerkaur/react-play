@@ -10,11 +10,13 @@ function App() {
  
   return (
       <div className="App">
-        <ThemeProvider>
+        {/* <ThemeProvider>
     
         <ContextComponent></ContextComponent>
-        </ThemeProvider>
-        {/* <ul>
+        </ThemeProvider> */}
+        <div className='header'>
+
+        <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -24,8 +26,18 @@ function App() {
           <li>
             <Link to="/gaurav">Gaurav</Link>
           </li>
-        </ul> */}
-        {/* <Routing/> */}
+          <li>
+            <Link to="/stopwatch">Stopwatch</Link>
+          </li>
+          <li>
+            <Link to="/theme">Theme</Link>
+          </li>
+          <li>
+            <Link to="/reducer">Reducer</Link>
+          </li>
+        </ul>
+        </div>
+        <Routing/>
       </div>
   );
 }

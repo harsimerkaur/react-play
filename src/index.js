@@ -10,12 +10,11 @@ import { ThemeProvider } from "./ThemeContext";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ThemeProvider>
-     
-    
-        <App />
+      {/* <ThemeProvider> */}
+
+      <App />
       {/* </ContextComponent> */}
-    </ThemeProvider>
+      {/* </ThemeProvider> */}
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

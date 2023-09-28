@@ -10,6 +10,9 @@ import Stopwatch from './Stopwatch';
 import ContextComponent from './ContextComponent';
 import RefCase from './RefCase';
 import ReducerComponent from './ReducerComponent';
+import Memo from './memo';
+import { RemoteComponent } from './RemoteComponent';
+import ParentCheckbox from './compoundComponent/parent';
 
 function Routing() {
 
@@ -21,7 +24,9 @@ function Routing() {
     <Route path="/gaurav" element={<h2>hello gaurav</h2>}></Route>
     <Route path="/theme" element={<ContextComponent></ContextComponent>}></Route>
     <Route path="/stopwatch" element={<RefCase></RefCase>}></Route>
-    <Route path="/reducer" element={<ReducerComponent/>}></Route>
+    <Route path="/memo" element={<Memo/>}></Route>
+    <Route path="/remote" element={<RemoteComponent/>}></Route>
+    <Route path="/compound" element={<ParentCheckbox/>}></Route>
   </Routes>
   )
 }

@@ -6,15 +6,19 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import ContextComponent from "./Components/ContextComponent";
 import { ThemeProvider } from "./ThemeContext";
-
+import {Provider} from 'react-redux'
+import { store } from "./store";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       {/* <ThemeProvider> */}
+      <Provider store={store}>
 
+     
       <App />
       {/* </ContextComponent> */}
       {/* </ThemeProvider> */}
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

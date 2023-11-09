@@ -1,4 +1,5 @@
 import React, {useReducer, useState} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import logo from "./logo.svg";
 import "./App.css";
 import Routing from "./Components/Routing";
@@ -6,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ContextComponent from './Components/ContextComponent';
 import { ThemeProvider } from './ThemeContext';
 import Context from "./contextStore";
+import { addToppings } from './Reducers/pizzaSlice';
 const reducer = (state, action) => {
   switch (action.type) {
     case "TOGGLE_THEME":
@@ -20,6 +22,15 @@ const reducer = (state, action) => {
 const App = () => {
  
   const [state, dispatch] = useReducer(reducer, {theme: "dark"});
+  const pizza = useSelector(state => state.pizza)
+  const dispatchState  = useDispatch()
+  const [topping, setTopping] = useState("");
+  console.log("pizza.toppings", pizza.toppings)
+ const handleToppings = () => {
+  console.log("topping", topping)
+    dispatchState(addToppings(topping))
+  }
+
   return (
     <Context.Provider value={{state, dispatch}}>
     {/* <Context.Provider value={"simer"}> */}
@@ -29,7 +40,9 @@ const App = () => {
         <ContextComponent></ContextComponent>
         </ThemeProvider> */}
         <div className='header'>
-
+        {pizza.toppings.map(topping => (<div key={topping}>{topping}</div>))}
+        <input value={topping} onChange={e =>setTopping(e.target.value)} />
+        <button onClick={handleToppings}> dispatch topping </button>
         <ul>
           <li>
             <Link to="/">Home</Link>

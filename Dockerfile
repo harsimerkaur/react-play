@@ -1,4 +1,5 @@
-From node:alpine
-COPY . /app
-WORKDIR /app
-CMD npm run start
+FROM node:alpine
+COPY . /app/
+WORKDIR /app/
+RUN npm install
+CMD ["npm", "run", "start"]
